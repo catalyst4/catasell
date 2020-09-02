@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../../partials/head') %>
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/css/partials/adminHeader.css">
+    <link rel="stylesheet" href="/public/css/partials/adminSidebar.css">
+    <link rel="stylesheet" href="/public/css/admin/products/listProducts.css">
+</head>
+<body>
+    <%- include('../../partials/adminHeader') %>
+
+    <%- include('../../partials/adminSidebar') %>
+
+    <div class="main">
+        <div class="container">
+            <h1>Products (<%= numProducts %>)</h1>
+            <div class="table-bg">
+                <table>
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Available</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(product of products) { %>
+                        <tr onclick="window.location='/admin/products/<%= product.productId %>'">
+                            <td>
+                                <div class="flex">
+                                    <img src="https://source.unsplash.com/random/50x50" alt="">
+                                    <div><%= product.productName %></div>
+                                </div>
+                            </td>
+                            <td><%= product.productQty %> in stock</td>
+                            <td>
+                                <% if(product.salePrice) { %>
+                                    $<%= product.salePrice %>
+                                <% } else { %>
+                                    $<%= product.productPrice %>
+                                <% } %>
+                            </td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                </table>    
+            </div>
+        </div>
+    </div>
+</body>
+</html>

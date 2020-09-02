@@ -1,0 +1,51 @@
+.container {
+    width: 50%;
+    margin: auto;
+}
+
+.settings h1 {
+    margin-bottom: 20px;
+}
+
+.settings-bg {
+    width: 100%;
+    box-sizing: border-box;
+    background: rgb(32,33,37);
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.setting-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.setting {
+    width: 100%;
+}
+
+.setting-wrapper {
+    background: rgba(0, 0, 0,0.1);
+    border-radius: 15px;
+    padding: 25px;
+    cursor: pointer;
+}
+
+.setting-wrapper:hover {
+    background: rgba(0, 0, 0,0.15);
+    transition: ease-in-out 0.15s;
+}
+
+.setting-wrapper a {
+    font-size: 20px;
+}
+
+.setting-wrapper i {
+    margin-right: 5px;
+}
+
+.setting-wrapper p {
+    margin-top: 10px;
+    font-size: 14px;
+}

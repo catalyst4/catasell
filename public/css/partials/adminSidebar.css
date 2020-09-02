@@ -1,0 +1,63 @@
+.sidebar {
+    height: 100%;
+    width: 250px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    position: fixed;
+    overflow-x: hidden;
+    padding: 25px;
+    background: rgb(32,33,37);
+}
+
+.main {
+    margin-top: 50px;
+    margin-left: 300px;
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+.nav-item {
+    width: 100%;
+    display: block;
+    padding: 15px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.nav-item i {
+    margin-right: 10px;
+    opacity: 0.5;
+}
+
+.nav-item.active {
+    background: rgb(23, 184, 224);
+    box-shadow: 0 0 15px 1px rgba(0, 132, 255, 0.5);
+}
+
+.nav-item.active i {
+    opacity: 1;
+}
+
+.nav-item:hover {
+    background: rgba(0, 0, 0,0.15);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-item.active:hover {
+    background: rgb(23, 184, 224);
+    box-shadow: 0 0 15px 1px rgba(0, 132, 255, 0.5);
+}
+
+.bottom {
+    width: 250px;
+    bottom: 0;
+    box-sizing: border-box;
+    position: fixed;
+}
+

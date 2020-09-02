@@ -1,0 +1,36 @@
+<div class="sidebar">
+    <h2>Welcome, jayk</h2>
+    <div class="nav">
+        <a class="nav-item" id="home" href="/admin"><i class="fas fa-home"></i> Home</a>
+        <a class="nav-item" id="orders" href="/admin/orders"><i class="fas fa-boxes"></i> Orders</a>
+        <a class="nav-item" id="products" href="/admin/products"><i class="fas fa-tag"></i> Products</a>
+        <a class="nav-item" id="analytics" href="/admin/analytics"><i class="fas fa-chart-bar"></i> Analytics</a>
+        <a class="nav-item" id="discounts" href="/admin/discounts"><i class="fas fa-percent"></i> Discounts</a>
+        <a class="nav-item bottom" id="settings" href="/admin/settings"><i class="fas fa-cog"></i> Settings</a>
+    </div>
+</div>
+<script>
+    
+    const home = document.getElementById('home');
+    const orders = document.getElementById('orders');
+    const products = document.getElementById('products');
+    const analytics = document.getElementById('analytics');
+    const discounts = document.getElementById('discounts');
+    const settings = document.getElementById('settings');
+
+    const url = window.location.href;
+    if(url.includes('/admin/orders')) {
+        orders.classList.add('active');
+    } else if(url.includes('/admin/products')) {
+        products.classList.add('active');
+    } else if(url.includes('/admin/analytics')) {
+        analytics.classList.add('active');
+    } else if(url.includes('/admin/discounts')) {
+        discounts.classList.add('active');
+    } else if(url.includes('/admin/settings')) {
+        settings.classList.add('active');
+    } else {
+        home.classList.add('active');
+    }
+
+</script>

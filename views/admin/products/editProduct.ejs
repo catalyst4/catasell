@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../../partials/head') %>
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/css/partials/adminHeader.css">
+    <link rel="stylesheet" href="/public/css/partials/adminSidebar.css">
+    <link rel="stylesheet" href="/public/css/admin/products/addProduct.css">
+</head>
+<body>
+    <%- include('../../partials/adminHeader') %>
+
+    <%- include('../../partials/adminSidebar') %>
+
+    <div class="main">
+        <div class="container">
+            <div class="add">
+                <h1>Edit Product</h1>
+                <form action="/api/addProduct" method="POST">
+                    <div class="general">
+                        <div class="input-group">
+                            <label for="productName">Product Name</label>
+                            <input type="text" name="productName" id="productName" placeholder="Name" value="<%= typeof product.productName != 'undefined' ? product.productName : '' %>">    
+                        </div>
+                        <div class="input-group">
+                            <label for="productDescription">Product Description</label>
+                            <textarea name="productDescription" id="productDescription" placeholder="Description"><%= typeof product.productDescription != 'undefined' ? product.productDescription : '' %></textarea>     
+                        </div>
+                    </div>
+                    <div class="images">
+                        <h2>Images</h2>
+                        <div class="dropzone dropzone-flex">
+                            <span class="dropzone-prompt">Add Media</span>
+                            <input type="file" class="dropzone-input">
+                        </div>
+                    </div>
+                    <div class="pricing">
+                        <h2>Pricing</h2>
+                        <div class="col">
+                            <div class="input-group">
+                                <label for="productPrice">Product Price</label>
+                                <input type="number" name="productPrice" id="productPrice" placeholder="Price" value="<%= typeof product.productPrice != 'undefined' ? product.productPrice : ''%>">    
+                            </div>
+                            <div class="input-group">
+                                <label for="salePrice">Sale Price</label>
+                                <input type="number" name="salePrice" id="salePrice" placeholder="Sale Price" value="<%= typeof product.salePrice != 'undefined' ? product.salePrice : ''%>"> 
+                            </div>    
+                        </div>
+                    </div>
+                    <div class="shipping">
+                        <h2>Shipping</h2>
+                        <label for="productQty">Product Quantity</label>
+                        <input type="number" name="productQty" id="productQty" placeholder="Quantity" value="<%= typeof product.productQty != 'undefined' ? product.productQty : ''%>">    
+                    </div>
+                    <div class="flex">
+                        <button type="submit">Add Product</button>
+                    </div>
+                </form>    
+            </div>
+        </div>
+    </div>
+</body>
+</html>
